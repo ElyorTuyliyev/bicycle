@@ -1,6 +1,8 @@
 import styled from "styled-components";
+
 const HeaderStyle = styled.div`
   background-color: red;
-  width: 100%;
+  padding: 29px 0;
 `;
+
 export default HeaderStyle;

@@ -25,11 +25,27 @@ function Home() {
                   <div className="home__pagination"></div>
                   <div className="home__pagination"></div>
                 </div>
-
-                <div className="home__"></div>
               </div>
             </section>
           </Container>
+          <div className="home__bicycle-type-wrapper">
+            <div className="home__bicycle-type">
+              <p className="home__bicycle-type-text">
+                Экстремальное вождение на горном велосипеде
+              </p>
+              <p>Подробнее</p>
+            </div>
+            <div className="home__bicycle-type">
+              <p className="home__bicycle-type-text">
+                Велосипеды для профессионалов
+              </p>
+            </div>
+            <div className="home__bicycle-type">
+              <p className="home__bicycle-type-text">
+                Долгая поездка на шоссейном велосипеде
+              </p>
+            </div>
+          </div>
         </HomeStyle>
       </main>
     </>

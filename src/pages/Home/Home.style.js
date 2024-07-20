@@ -58,6 +58,26 @@ const HomeStyle = styled.div`
       }
     }
   }
+
+  .home__bicycle-type-wrapper {
+    display: flex;
+    gap: 10px;
+    /* color: #fff; */
+    justify-content: space-between;
+
+    &.home__bicycle-type {
+      &:nth-child(1) {
+        flex: 2;
+        color: #fff;
+      }
+      &:nth-child(2) {
+        flex: 1;
+      }
+      &:nth-child(3) {
+        flex: 1;
+      }
+    }
+  }
 `;
 
 export default HomeStyle;

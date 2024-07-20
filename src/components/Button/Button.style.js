@@ -7,18 +7,11 @@ const StyledButton = styled.button`
       : props.variant === "blue"
       ? "blue"
       : "red"};
-  border: 1px solid gainsboro;
+  border: none;
   border-radius: 6px;
-  padding: 8px 16px;
+  padding: 18px 45px;
   color: #fff;
-`;
-
-export const StyledBlueButton = styled.button`
-  background: violet;
-  border: 1px solid gainsboro;
-  border-radius: 6px;
-  padding: 8px 16px;
-  color: #fff;
+  font-weight: 500;
 `;
 
 export default StyledButton;

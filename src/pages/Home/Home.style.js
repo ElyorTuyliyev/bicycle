@@ -30,6 +30,34 @@ const HomeStyle = styled.div`
     line-height: 28.8px;
     margin: 48px 0 40px 0;
   }
+
+  .home__pagination-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin: 153px 0 32px 0;
+
+    .home__pagination {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: #4c4c4c;
+      transition: 0.2s linear;
+
+      &:hover {
+        width: 19px;
+        height: 19px;
+        background-color: #f57520;
+      }
+
+      &:first-child {
+        width: 19px;
+        height: 19px;
+        background-color: #f57520;
+      }
+    }
+  }
 `;
 
 export default HomeStyle;

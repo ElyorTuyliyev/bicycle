@@ -1,4 +1,4 @@
-const LightColors = {
+const Colors = {
   dark: {
     100: "#F8F8F8",
     200: "#E5E5E5",
@@ -27,4 +27,4 @@ const LightColors = {
   },
 };
 
-export default LightColors;
+export default Colors;

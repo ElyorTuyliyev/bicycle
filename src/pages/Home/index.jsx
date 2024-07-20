@@ -7,8 +7,51 @@ import TacxBrand from "../../assets/images/logotip-tacx.png";
 import TopeakBrand from "../../assets/images/logotip-topeak.png";
 import TrekBrand from "../../assets/images/logotip-trek.png";
 import WahooBrand from "../../assets/images/logotip-wahoo.png";
-
+import Card from "../../components/Card";
+import FlagImgItaly from "../../assets/images/flag-italy.png";
+import FlagImgUsa from "../../assets/images/flag-usa.png";
+import ImgBicycle from "../../assets/images/bicycle-1.png";
+import ArrowRightIcon from "../../assets/icons/arrow-right.svg";
+import ArrowLeftIcon from "../../assets/icons/arrow-left.svg";
 function Home() {
+  const cards = [
+    {
+      flagImg: FlagImgItaly,
+      soldText: "Распродано",
+      img: ImgBicycle,
+      text: "Bianchi AQUILA L DURA ACE DI2 TEAM JUMBO 2021",
+      cost: "684 840 ₽",
+      button: (
+        <Button variant={"red"} fullWidth>
+          распроданный
+        </Button>
+      ),
+    },
+    {
+      flagImg: FlagImgUsa,
+      soldText: "Распродано",
+      img: ImgBicycle,
+      text: "Bianchi AQUILA L DURA ACE DI2 TEAM JUMBO 2021",
+      cost: "684 840 ₽",
+      button: (
+        <Button variant={"red"} fullWidth>
+          распроданный
+        </Button>
+      ),
+    },
+    {
+      flagImg: FlagImgUsa,
+      soldText: "В наличии",
+      img: ImgBicycle,
+      text: "Bianchi AQUILA L DURA ACE DI2 TEAM JUMBO 2021",
+      cost: "684 840 ₽",
+      button: (
+        <Button variant={"orange"} fullWidth>
+          В 1 клик
+        </Button>
+      ),
+    },
+  ];
   return (
     <>
       <Header />
@@ -58,7 +101,23 @@ function Home() {
             <img src={TrekBrand} alt="TrekBrand-logo" />
             <img src={WahooBrand} alt="WahooBrand-logo" />
           </div>
-          <section className="newItems"></section>
+          <section className="newItems">
+            <Container>
+              <h3 className="newItems__title"> Новинки</h3>
+              <div className="newItems__wrapper">
+                <div className="arrow__left-wrapper">
+                  <img src={ArrowRightIcon} alt="ArrowRightIcon" />
+                </div>
+                <div className="arrow__right-wrapper">
+                  <img src={ArrowLeftIcon} alt="ArrowLeftIcon" />
+                </div>
+                {cards.map((item) => (
+                  <Card key={item.text} {...item} />
+                ))}
+              </div>
+            </Container>
+          </section>
+          <section className="catalog"></section>
         </HomeStyle>
       </main>
     </>

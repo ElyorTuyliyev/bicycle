@@ -2,6 +2,11 @@ import Button from "../../components/Button";
 import Header from "../../components/Header";
 import Container from "../../container";
 import HomeStyle from "./Home.style";
+import SramBrand from "../../assets/images/logotip-sram.png";
+import TacxBrand from "../../assets/images/logotip-tacx.png";
+import TopeakBrand from "../../assets/images/logotip-topeak.png";
+import TrekBrand from "../../assets/images/logotip-trek.png";
+import WahooBrand from "../../assets/images/logotip-wahoo.png";
 
 function Home() {
   return (
@@ -31,21 +36,29 @@ function Home() {
           <div className="home__bicycle-type-wrapper">
             <div className="home__bicycle-type">
               <p className="home__bicycle-type-text">
-                Экстремальное вождение на горном велосипеде
-              </p>
-              <p>Подробнее</p>
-            </div>
-            <div className="home__bicycle-type">
-              <p className="home__bicycle-type-text">
-                Велосипеды для профессионалов
+                Экстремальное <br /> вождение на горном <br /> велосипеде
+                <span>Подробнее</span>
               </p>
             </div>
             <div className="home__bicycle-type">
               <p className="home__bicycle-type-text">
-                Долгая поездка на шоссейном велосипеде
+                Велосипеды <br /> для профессионалов
+              </p>
+            </div>
+            <div className="home__bicycle-type">
+              <p className="home__bicycle-type-text">
+                Долгая поездка <br /> на шоссейном велосипеде
               </p>
             </div>
           </div>
+          <div className="home__bicycle-brand-wrapper">
+            <img src={SramBrand} alt="SramBrand-logo" />
+            <img src={TacxBrand} alt="TacxBrand-logo" />
+            <img src={TopeakBrand} alt="TopeakBrand-logo" />
+            <img src={TrekBrand} alt="TrekBrand-logo" />
+            <img src={WahooBrand} alt="WahooBrand-logo" />
+          </div>
+          <section className="newItems"></section>
         </HomeStyle>
       </main>
     </>

@@ -61,22 +61,53 @@ const HomeStyle = styled.div`
 
   .home__bicycle-type-wrapper {
     display: flex;
-    gap: 10px;
-    /* color: #fff; */
     justify-content: space-between;
+    align-items: center;
 
-    &.home__bicycle-type {
+    .home__bicycle-type {
+      font-size: 24px;
+      font-weight: 500;
+      color: #fff;
+      background-color: #4c4c4c;
+      padding: 48px;
+
       &:nth-child(1) {
-        flex: 2;
-        color: #fff;
+        height: 190px;
+        border-radius: 0 10px 10px 0;
+        flex: 1.9;
+        background-color: #101010;
+        display: flex;
+        justify-content: flex-end;
+        .home__bicycle-type-text {
+          width: 293px;
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+
+          span {
+            color: orange;
+            font-size: 16px;
+          }
+        }
       }
+
       &:nth-child(2) {
         flex: 1;
+        background-color: #131313;
       }
+
       &:nth-child(3) {
-        flex: 1;
+        flex: 2;
+        background-color: #2e2e2e;
       }
     }
+  }
+
+  .home__bicycle-brand-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 48px 0 66px 0;
   }
 `;
 

@@ -13,6 +13,11 @@ import FlagImgUsa from "../../assets/images/flag-usa.png";
 import ImgBicycle from "../../assets/images/bicycle-1.png";
 import ArrowRightIcon from "../../assets/icons/arrow-right.svg";
 import ArrowLeftIcon from "../../assets/icons/arrow-left.svg";
+import CatalogBicycle from "../../assets/images/catalog-bicycle.png";
+import CatalogBicycle2 from "../../assets/images/catalog-bicycle-1.png";
+import CatalogStands from "../../assets/images/Bicycle-stands.png";
+import CatalogAccessories from "../../assets/images/catalog-bicycle-accessories.png";
+import CatalogScot from "../../assets/images/catalog-bicycle-caska.png";
 function Home() {
   const cards = [
     {
@@ -117,7 +122,21 @@ function Home() {
               </div>
             </Container>
           </section>
-          <section className="catalog"></section>
+          <section className="catalog">
+            <Container>
+              <div className="catalog__wrapper">
+                <div className="catalog__bicycle-wrapper">
+                  <h2>Велосипеды</h2>
+                  <img src={CatalogBicycle} alt="CatalogBicycle" />
+                </div>
+                <div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </div>
+              </div>
+            </Container>
+          </section>
         </HomeStyle>
       </main>
     </>

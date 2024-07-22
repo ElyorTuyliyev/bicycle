@@ -9,7 +9,7 @@ const CardStyle = styled.div`
 
   .card__flag-wrapper {
     display: flex;
-    color: black;
+    color: ${Colors.dark[900]};
     align-items: center;
     justify-content: space-between;
     padding: 0 16px 0 0;

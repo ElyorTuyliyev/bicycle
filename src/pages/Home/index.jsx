@@ -125,6 +125,7 @@ function Home() {
           <section className="catalog">
             <Container>
               <div className="catalog__wrapper">
+                <h2 className="catalog__title">Каталог</h2>
                 <div className="catalog__bicycle-wrapper">
                   <h2>Велосипеды</h2>
                   <img src={CatalogBicycle} alt="CatalogBicycle" />

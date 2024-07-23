@@ -151,6 +151,20 @@ const HomeStyle = styled.div`
   .arrow__right-wrapper {
     left: -90px;
   }
+
+  .catalog__title {
+    margin: 190px 0 80px 0;
+    font-size: 64px;
+    letter-spacing: 5;
+  }
+
+  .catalog__bicycle-wrapper {
+    background-color: ${Colors.orange[600]};
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
 `;
 
 export default HomeStyle;

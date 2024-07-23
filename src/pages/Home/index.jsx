@@ -127,13 +127,28 @@ function Home() {
               <div className="catalog__wrapper">
                 <h2 className="catalog__title">Каталог</h2>
                 <div className="catalog__bicycle-wrapper">
-                  <h2>Велосипеды</h2>
+                  <h2 className="catalog__bicycle">Велосипеды</h2>
                   <img src={CatalogBicycle} alt="CatalogBicycle" />
                 </div>
-                <div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
+                <div className="catalog__bicycle-box">
+                  <div className="catalog__bicycle-trade-in">
+                    <p>Trade-in</p>
+                  </div>
+                  <div className="catalog__bicycle-Spare ">
+                    <div>
+                      <p>Запчасти</p>
+                    </div>
+                    <div>
+                      <p>Аксессуары</p>
+                    </div>
+                  </div>
+                  <div className="catalog__bicycle-equipment"></div>
+                  <div>
+                    <p>Экипировка</p>
+                  </div>
+                  <div>
+                    <p>Велостанки</p>
+                  </div>
                 </div>
               </div>
             </Container>

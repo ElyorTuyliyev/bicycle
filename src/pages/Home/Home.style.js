@@ -155,6 +155,7 @@ const HomeStyle = styled.div`
   .catalog__title {
     margin: 190px 0 80px 0;
     font-size: 64px;
+    font-weight: 700;
     letter-spacing: 5;
   }
 
@@ -164,6 +165,13 @@ const HomeStyle = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+  }
+
+  .catalog__bicycle {
+    font-size: 64px;
+    font-weight: 400;
+    letter-spacing: 5%;
+    color: ${Colors.white[900]};
   }
 `;
 

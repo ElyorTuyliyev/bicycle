@@ -18,6 +18,7 @@ import CatalogBicycle2 from "../../assets/images/catalog-bicycle-1.png";
 import CatalogStands from "../../assets/images/Bicycle-stands.png";
 import CatalogAccessories from "../../assets/images/catalog-bicycle-accessories.png";
 import CatalogScot from "../../assets/images/catalog-bicycle-caska.png";
+import CatalogBalloon from "../../assets/images/balloon.png";
 function Home() {
   const cards = [
     {
@@ -132,22 +133,32 @@ function Home() {
                 </div>
                 <div className="catalog__bicycle-box">
                   <div className="catalog__bicycle-trade-in">
-                    <p>Trade-in</p>
+                    <p className="catalog__bicycle-trade-in-title">Trade-in</p>
+                    <img src={CatalogBicycle2} alt="Bicycle" />
                   </div>
-                  <div className="catalog__bicycle-Spare ">
+                  <div className="catalog__bicycle-spare ">
+                    <div className="catalog__bicycle-spare-card">
+                      <p className="catalog__bicycle-spare-card-title">
+                        Запчасти
+                      </p>
+                      <img src={CatalogBalloon} alt="Bicycle" />
+                    </div>
+                    <div className="catalog__bicycle-spare-card2">
+                      <img src={CatalogAccessories} alt="Bicycle" />
+                      <p className="catalog__bicycle-spare-card-title">
+                        Аксессу
+                      </p>
+                    </div>
+                  </div>
+                  <div className="catalog__bicycle-equipment">
                     <div>
-                      <p>Запчасти</p>
+                      <p>Экипировка</p>
+                      <img src={CatalogScot} alt="Bicycle" />
                     </div>
                     <div>
-                      <p>Аксессуары</p>
+                      <p>Велостанки</p>
+                      <img src={CatalogBalloon} alt="Bicycle" />
                     </div>
-                  </div>
-                  <div className="catalog__bicycle-equipment"></div>
-                  <div>
-                    <p>Экипировка</p>
-                  </div>
-                  <div>
-                    <p>Велостанки</p>
                   </div>
                 </div>
               </div>

@@ -152,6 +152,12 @@ const HomeStyle = styled.div`
     left: -90px;
   }
 
+  .catalog__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
   .catalog__title {
     margin: 190px 0 80px 0;
     font-size: 64px;
@@ -165,6 +171,7 @@ const HomeStyle = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    padding: 0 0 0 20px;
   }
 
   .catalog__bicycle {
@@ -172,6 +179,80 @@ const HomeStyle = styled.div`
     font-weight: 400;
     letter-spacing: 5%;
     color: ${Colors.white[900]};
+  }
+
+  .catalog__bicycle-box {
+    display: flex;
+    gap: 16px;
+  }
+
+  .catalog__bicycle-trade-in {
+    background-color: ${Colors.dark[900]};
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+  }
+
+  .catalog__bicycle-trade-in-title {
+    color: ${Colors.white[900]};
+    padding: 80px 0 40px 0;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 5%;
+    font-size: 64px;
+  }
+
+  .catalog__bicycle-spare {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .catalog__bicycle-spare-card {
+    background-color: ${Colors.dark[900]};
+    color: #fff;
+    border-radius: 10px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .catalog__bicycle-spare-card-title {
+    color: ${Colors.white[900]};
+    transform: translateX(40px);
+    font-size: 64px;
+  }
+
+  .catalog__bicycle-spare-card2 {
+    background-color: ${Colors.dark[900]};
+    border-radius: 10px;
+
+    img {
+      width: 200px;
+      height: 190px;
+      object-fit: cover;
+      transform: translateX(190px);
+    }
+  }
+
+  .catalog__bicycle-equipment {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    div {
+      border-radius: 10px;
+
+      align-items: center;
+      color: #fff;
+      background-color: ${Colors.dark[900]};
+
+      p {
+        font-size: 64px;
+      }
+    }
   }
 `;
 

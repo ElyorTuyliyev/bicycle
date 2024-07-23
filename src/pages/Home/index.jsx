@@ -141,29 +141,43 @@ function Home() {
                       <p className="catalog__bicycle-spare-card-title">
                         Запчасти
                       </p>
-                      <img src={CatalogBalloon} alt="Bicycle" />
+                      <img src={CatalogBalloon} alt="CatalogBalloon" />
                     </div>
                     <div className="catalog__bicycle-spare-card2">
-                      <img src={CatalogAccessories} alt="Bicycle" />
+                      <img src={CatalogAccessories} alt="CatalogAccessories" />
                       <p className="catalog__bicycle-spare-card-title">
                         Аксессу
                       </p>
                     </div>
                   </div>
                   <div className="catalog__bicycle-equipment">
-                    <div>
+                    <div className="catalog__bicycle-equipment-card">
                       <p>Экипировка</p>
-                      <img src={CatalogScot} alt="Bicycle" />
+                      <img src={CatalogScot} alt="CatalogScot" />
                     </div>
-                    <div>
+                    <div className="catalog__bicycle-equipment-card2">
                       <p>Велостанки</p>
-                      <img src={CatalogBalloon} alt="Bicycle" />
+                      <img src={CatalogStands} alt="CatalogStands" />
                     </div>
                   </div>
                 </div>
               </div>
+              <div className="catalog__motivation-text-wrapper">
+                <h3 className="catalog__motivation-title">
+                  Ничего не сможет остановить вас
+                </h3>
+                <p className="catalog__motivation-text">
+                  Наша компания специализируется на продаже товаров
+                  для велосипедного спорта — велосипедов, запасных частей,
+                  аксессуаров и различного спортивного инвентаря для активного
+                  спорта и отдыха.
+                  <span className="catalog__motivation-link">Подробнее</span>
+                </p>
+              </div>
             </Container>
           </section>
+
+          <section className=""></section>
         </HomeStyle>
       </main>
     </>

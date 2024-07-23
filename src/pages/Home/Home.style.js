@@ -221,7 +221,7 @@ const HomeStyle = styled.div`
   }
   .catalog__bicycle-spare-card-title {
     color: ${Colors.white[900]};
-    transform: translateX(40px);
+    transform: translateX(20px);
     font-size: 64px;
   }
 
@@ -242,17 +242,59 @@ const HomeStyle = styled.div`
     flex-direction: column;
     justify-content: space-between;
 
-    div {
+    .catalog__bicycle-equipment-card {
       border-radius: 10px;
-
-      align-items: center;
       color: #fff;
       background-color: ${Colors.dark[900]};
 
       p {
-        font-size: 64px;
+        font-size: 42px;
+        padding: 20px 0;
+        transform: translateX(40px);
+      }
+
+      img {
+        transform: translateX(150px);
       }
     }
+  }
+
+  .catalog__bicycle-equipment-card2 {
+    border-radius: 10px;
+    color: #fff;
+    background-color: ${Colors.dark[900]};
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    p {
+      font-size: 42px;
+      transform: translateX(40px);
+    }
+  }
+
+  .catalog__motivation-text-wrapper {
+    display: flex;
+    padding: 160px 0 80px 0;
+  }
+
+  .catalog__motivation-title {
+    width: 700px;
+    font-size: 64px;
+    color: ${Colors.dark[900]};
+    flex: 1;
+  }
+
+  .catalog__motivation-text {
+    flex: 0.7;
+    font-size: 16px;
+    line-height: 25.6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .catalog__motivation-link {
+    color: ${Colors.dark[300]};
   }
 `;
 

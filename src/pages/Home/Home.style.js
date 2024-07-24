@@ -296,6 +296,12 @@ const HomeStyle = styled.div`
   .catalog__motivation-link {
     color: ${Colors.dark[300]};
   }
+
+  .about {
+    img {
+      width: 100%;
+    }
+  }
 `;
 
 export default HomeStyle;

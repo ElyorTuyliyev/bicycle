@@ -19,6 +19,12 @@ import CatalogStands from "../../assets/images/Bicycle-stands.png";
 import CatalogAccessories from "../../assets/images/catalog-bicycle-accessories.png";
 import CatalogScot from "../../assets/images/catalog-bicycle-caska.png";
 import CatalogBalloon from "../../assets/images/balloon.png";
+import AboutNaturel from "../../assets/images/natural.png";
+import IconDiamond from "../../assets/icons/icon-diamond.svg";
+import IconSticker from "../../assets/icons/icon-sticker.svg";
+import IconSetting from "../../assets/icons/icon-setting.svg";
+import IconHours from "../../assets/icons/icon-hours.svg";
+import AboutText from "./components/about";
 function Home() {
   const cards = [
     {
@@ -58,6 +64,34 @@ function Home() {
       ),
     },
   ];
+
+  const aboutText = [
+    {
+      icon: IconDiamond,
+      alt: "sdc",
+      title: "Европейские бренды",
+      text: "Представляем десятки европейских брендов",
+    },
+    {
+      icon: IconSticker,
+      alt: "sdc",
+      title: "Вечная гарантия",
+      text: "ewrfНа некоторые бренды предоставляем пожизненную гарантиюvdefwvr",
+    },
+    {
+      icon: IconSetting,
+      alt: "sdc",
+      title: "Предпродажная настройка",
+      text: "Специалисты настроят ваш велосипед наилучшим образом",
+    },
+    {
+      icon: IconHours,
+      alt: "sdc",
+      title: "Доставка за 24 часа",
+      text: "Доставляем товар всеми популярными транспортными компаниями",
+    },
+  ];
+
   return (
     <>
       <Header />
@@ -177,7 +211,16 @@ function Home() {
             </Container>
           </section>
 
-          <section className=""></section>
+          <section className="about">
+            <img src={AboutNaturel} alt="about-bicycle" />
+            <Container>
+              <div className="about__wrapper">
+                {aboutText.map((item) => (
+                  <AboutText {...item} />
+                ))}
+              </div>
+            </Container>
+          </section>
         </HomeStyle>
       </main>
     </>

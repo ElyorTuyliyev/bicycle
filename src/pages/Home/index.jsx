@@ -30,6 +30,8 @@ import MountainImg from "../../assets/images/mountain-img.png";
 import IconBike from "../../assets/icons/icon-bike.svg";
 import IconPhone from "../../assets/icons/icon-phone.svg";
 import IconGear from "../../assets/icons/icon-gear.svg";
+import IconChain from "../../assets/icons/icon-chain.svg";
+import CardMountain from "./components/MontainCard";
 function Home() {
   const cards = [
     {
@@ -123,29 +125,29 @@ function Home() {
 
   const mountainCard = [
     {
-      iconName: "Рама",
-      icon: "fdsv",
+      iconTitle: "Рама",
+      img: IconBike,
       alt: "bicycleIcon",
       text: "It is a long established fact that a reader will be distracted by the readable content of",
     },
-    {
-      iconName: "Рама",
-      icon: "fdsv",
-      alt: "bicycleIcon",
-      text: "It is a long established fact that a reader will be distracted by the readable content of",
-    },
-    {
-      iconName: "Рама",
-      icon: "fdsv",
-      alt: "bicycleIcon",
-      text: "It is a long established fact that a reader will be distracted by the readable content of",
-    },
-    {
-      iconName: "Рама",
-      icon: "fdsv",
-      alt: "bicycleIcon",
-      text: "It is a long established fact that a reader will be distracted by the readable content of",
-    },
+    // {
+    //   iconName: "Бортовой компьютер",
+    //   icon: IconPhone,
+    //   alt: "bicycleIcon",
+    //   text: "The point of using lorem ipsum is that it has a more-or-less normal distribution of letters",
+    // },
+    // {
+    //   iconName: "Трансмиссия",
+    //   icon: IconGear,
+    //   alt: "bicycleIcon",
+    //   text: "Many desktop publishing packages and web page editors now use lorem ipsum as ",
+    // },
+    // {
+    //   iconName: "Оборудование",
+    //   icon: IconChain,
+    //   alt: "bicycleIcon",
+    //   text: "Contrary to popular belief, lorem ipsum is not simply random text. It has roots in",
+    // },
   ];
 
   return (
@@ -295,7 +297,7 @@ function Home() {
               <div className="mountain__box-wrapper">
                 <div className="mountain__card-wrapper">
                   {mountainCard.map((item) => (
-                    <Card {...item} />
+                    <CardMountain {...item} />
                   ))}
                 </div>
                 <div className="mountain__about">
@@ -308,7 +310,7 @@ function Home() {
                     приятной и комфортной
                   </p>
 
-                  <Button variant={origin}> Каталог</Button>
+                  <Button variant={"origin"}> Каталог</Button>
                 </div>
               </div>
             </Container>

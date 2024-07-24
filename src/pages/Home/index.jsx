@@ -24,7 +24,12 @@ import IconDiamond from "../../assets/icons/icon-diamond.svg";
 import IconSticker from "../../assets/icons/icon-sticker.svg";
 import IconSetting from "../../assets/icons/icon-setting.svg";
 import IconHours from "../../assets/icons/icon-hours.svg";
-import AboutText from "./components/about";
+import AboutText from "./components/About";
+import ModelsImg from "../../assets/images/models-img.png";
+import MountainImg from "../../assets/images/mountain-img.png";
+import IconBike from "../../assets/icons/icon-bike.svg";
+import IconPhone from "../../assets/icons/icon-phone.svg";
+import IconGear from "../../assets/icons/icon-gear.svg";
 function Home() {
   const cards = [
     {
@@ -65,18 +70,42 @@ function Home() {
     },
   ];
 
+  const modelCards = [
+    {
+      flagImg: FlagImgItaly,
+      soldText: "Распродано",
+      img: ImgBicycle,
+      text: "Bianchi AQUILA L DURA ACE DI2 TEAM JUMBO 2021",
+      cost: "684 840 ₽",
+    },
+    {
+      flagImg: FlagImgItaly,
+      soldText: "Распродано",
+      img: ImgBicycle,
+      text: "Bianchi AQUILA L DURA ACE DI2 TEAM JUMBO 2021",
+      cost: "684 840 ₽",
+    },
+    {
+      flagImg: FlagImgItaly,
+      soldText: "Распродано",
+      img: ImgBicycle,
+      text: "Bianchi AQUILA L DURA ACE DI2 TEAM JUMBO 2021",
+      cost: "684 840 ₽",
+    },
+  ];
+
   const aboutText = [
     {
       icon: IconDiamond,
       alt: "sdc",
       title: "Европейские бренды",
-      text: "Представляем десятки европейских брендов",
+      text: "Представляем десятки   европейских брендов",
     },
     {
       icon: IconSticker,
       alt: "sdc",
       title: "Вечная гарантия",
-      text: "ewrfНа некоторые бренды предоставляем пожизненную гарантиюvdefwvr",
+      text: " некоторые бренды предоставляем пожизненную гарантиюvdefwvr",
     },
     {
       icon: IconSetting,
@@ -89,6 +118,33 @@ function Home() {
       alt: "sdc",
       title: "Доставка за 24 часа",
       text: "Доставляем товар всеми популярными транспортными компаниями",
+    },
+  ];
+
+  const mountainCard = [
+    {
+      iconName: "Рама",
+      icon: "fdsv",
+      alt: "bicycleIcon",
+      text: "It is a long established fact that a reader will be distracted by the readable content of",
+    },
+    {
+      iconName: "Рама",
+      icon: "fdsv",
+      alt: "bicycleIcon",
+      text: "It is a long established fact that a reader will be distracted by the readable content of",
+    },
+    {
+      iconName: "Рама",
+      icon: "fdsv",
+      alt: "bicycleIcon",
+      text: "It is a long established fact that a reader will be distracted by the readable content of",
+    },
+    {
+      iconName: "Рама",
+      icon: "fdsv",
+      alt: "bicycleIcon",
+      text: "It is a long established fact that a reader will be distracted by the readable content of",
     },
   ];
 
@@ -212,12 +268,48 @@ function Home() {
           </section>
 
           <section className="about">
-            <img src={AboutNaturel} alt="about-bicycle" />
+            <img className="img" src={AboutNaturel} alt="about-bicycle" />
             <Container>
               <div className="about__wrapper">
                 {aboutText.map((item) => (
                   <AboutText {...item} />
                 ))}
+              </div>
+            </Container>
+          </section>
+          <section className="models">
+            <h2 className="models__title">Лучшие модели для зимней езды</h2>
+            <div className="models__wrapper">
+              <img className="models__img" src={ModelsImg} alt="modelsImg" />
+              <div className="models__card-wrapper">
+                {modelCards.map((item) => (
+                  <Card {...item} />
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <section className="mountain">
+            <Container>
+              <h2 className="mountain__title">Горные велосипеды</h2>
+              <div className="mountain__box-wrapper">
+                <div className="mountain__card-wrapper">
+                  {mountainCard.map((item) => (
+                    <Card {...item} />
+                  ))}
+                </div>
+                <div className="mountain__about">
+                  <img src={MountainImg} alt="MountainImg" />
+
+                  <p className="mountain__text">
+                    Горный велосипед несмотря на свое название часто и активно
+                    используются в условиях города, так как обладает рядом
+                    характеристик, позволяющих сделать велопрогулку максимально
+                    приятной и комфортной
+                  </p>
+
+                  <Button variant={origin}> Каталог</Button>
+                </div>
               </div>
             </Container>
           </section>

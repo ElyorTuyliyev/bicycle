@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import HomeImg from "../../assets/images/bc-img.png";
-import Color from "../../themes/colors";
 import LightColors from "../../themes/colors";
 import Colors from "../../themes/colors";
+
 const HomeStyle = styled.div`
   background-image: url(${HomeImg});
   width: 100%;
@@ -298,9 +298,48 @@ const HomeStyle = styled.div`
   }
 
   .about {
-    img {
+    background-color: ${Colors.dark[600]};
+    .img {
       width: 100%;
     }
+  }
+
+  .about__wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 32px 0 62px 0;
+  }
+
+  .models {
+    background-color: ${Colors.dark[900]};
+    position: relative;
+  }
+
+  .models__title {
+    width: 418px;
+    font-size: 50px;
+    color: ${Colors.white[900]};
+    position: absolute;
+    left: 315px;
+    top: 80px;
+  }
+
+  .models__img {
+    width: 800px;
+  }
+
+  .models__wrapper {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .models__card-wrapper {
+    position: absolute;
+    right: 0;
+    top: 220px;
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
   }
 `;
 

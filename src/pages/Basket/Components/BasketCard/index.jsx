@@ -10,6 +10,7 @@ function BasketCard({
   imgCross,
   handleDecrement,
   handleIncrement,
+  handleDelete,
   id,
 }) {
   return (
@@ -33,11 +34,12 @@ function BasketCard({
             +
           </button>
         </div>
-        <p className="basketCard__count">{count ? +cost * +count : cost}</p>
+        <p className="basketCard__count">{count ? cost * count : cost} ₽</p>
         <img
           className="basketCard__cross-icon"
           src={imgCross}
           alt="cross-icon"
+          onClick={() => handleDelete(id)}
         />
       </BasketCardStyle>
     </Container>

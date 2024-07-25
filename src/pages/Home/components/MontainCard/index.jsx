@@ -54,7 +54,6 @@ function CardMountain({ iconTitle, img, alt, text }) {
         -
       </button> */}
       <div>
-        {" "}
         {users.map((item) => (
           <div key={item?.id}>
             <h2>

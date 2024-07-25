@@ -1,10 +1,17 @@
 import styled from "styled-components";
+import Colors from "../../themes/colors";
 
 const HeaderStyle = styled.div`
-  padding: 29px 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  .header__wrapper {
+    padding: 29px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header {
+    background-color: ${Colors.dark[900]};
+  }
 
   .header__links {
     display: flex;

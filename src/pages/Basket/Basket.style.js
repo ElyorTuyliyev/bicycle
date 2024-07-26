@@ -30,6 +30,19 @@ const BasketStyle = styled.div`
     gap: 32px;
   }
 
+  .basket__clear {
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 3px 8px;
+    transition: 0.1s linear;
+    &:hover {
+      box-shadow: 0 0 5px ${Colors.dark[300]};
+    }
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+
   .basket__design {
     border: 1px solid ${Colors.dark[200]};
     padding: 32px 24px;

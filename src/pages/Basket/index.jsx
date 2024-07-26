@@ -13,11 +13,6 @@ import Footer from "../../components/footer";
 const Basket = () => {
   const [data, setData] = useState([]);
 
-  // const cardAdd = ()=>{
-  //   const con =
-  // }
-
-  const [searchInput, setSearchInput] = useState("");
   const [formData, setFormData] = useState({});
 
   const handleDecrement = (id) => {
@@ -37,12 +32,7 @@ const Basket = () => {
   };
 
   const handleDelete = (id) => {
-    setSearchInput("Item deleted");
     setData(data.filter((item) => item.id !== id));
-  };
-
-  const handleInputChange = (e) => {
-    setSearchInput(e.target.value);
   };
 
   const basketCard = [
@@ -89,6 +79,10 @@ const Basket = () => {
     } else {
       setFormData({ ...formData, [name]: value });
     }
+  };
+
+  const handleAllCardDelete = (id) => {
+    setData(data.filter((item) => item !== item));
   };
 
   return (
@@ -138,7 +132,9 @@ const Basket = () => {
             <div className="basket__card-intro">
               <div className="basket__card-filter">
                 <p>Вернуться к покупкам</p>
-                <p>Очистить корзину</p>
+                <p className="basket__clear" onClick={handleAllCardDelete}>
+                  Очистить корзину
+                </p>
               </div>
               {data?.map((item) => {
                 return (

@@ -4,7 +4,9 @@ import LinkTitleStyle from "./linkTitle.style";
 function LinkTitle({ title }) {
   return (
     <LinkTitleStyle>
-      <Link className="links">{title}</Link>
+      <Link className="links" to="/home">
+        {title}
+      </Link>
     </LinkTitleStyle>
   );
 }

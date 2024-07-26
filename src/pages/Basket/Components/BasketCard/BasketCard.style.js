@@ -2,12 +2,12 @@ import styled from "styled-components";
 import Colors from "../../../../themes/colors";
 
 const BasketCardStyle = styled.div`
-  max-width: 949px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
   border-bottom: 1px solid ${Colors.dark[200]};
+  padding: 10px 0 10px 0;
 
   .basketCard__text {
     width: 200px;

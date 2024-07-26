@@ -2,40 +2,23 @@ import Header from "../../components/Header";
 import BasketStyle from "./Basket.style";
 import BasketCard from "./Components/BasketCard";
 import BasketImg from "../../assets/images/basket-bicycle.png";
-import CrossIcon from "../../assets/icons/Icon-cross.svg";
-import { useState } from "react";
-import Container from "../../container";
 
+import { useEffect, useState } from "react";
+import Container from "../../container";
+import Button from "../../components/Button";
+import Card from "../../components/Card";
+import FlagImgItaly from "../../assets/images/flag-italy.png";
+import ImgBicycle from "../../assets/images/bicycle-1.png";
+import Footer from "../../components/footer";
 const Basket = () => {
-  const [data, setData] = useState([
-    {
-      id: Math.floor(Math.random() * 100),
-      img: BasketImg,
-      alt: "sc",
-      text: "Look 977 BLACK FLUO YELLOW GREEN XT 2x11S AMC 2018;",
-      count: 1,
-      cost: 435000,
-      imgCross: CrossIcon,
-    },
-    {
-      id: Math.floor(Math.random() * 100),
-      img: BasketImg,
-      alt: "sc",
-      text: "Trek Fx 3 Disc Dnister Black HYBD 2022",
-      count: 1,
-      cost: 97070,
-      imgCross: CrossIcon,
-    },
-    {
-      id: Math.floor(Math.random() * 100),
-      img: BasketImg,
-      alt: "sc",
-      text: "Trek Marlin 4 Aloha ATB 27.5 2022",
-      count: 1,
-      cost: 73300,
-      imgCross: CrossIcon,
-    },
-  ]);
+  const [data, setData] = useState([]);
+
+  // const cardAdd = ()=>{
+  //   const con =
+  // }
+
+  const [searchInput, setSearchInput] = useState("");
+  const [formData, setFormData] = useState({});
 
   const handleDecrement = (id) => {
     setData(
@@ -44,6 +27,7 @@ const Basket = () => {
       )
     );
   };
+
   const handleIncrement = (id) => {
     setData(
       data.map((item) =>
@@ -53,13 +37,95 @@ const Basket = () => {
   };
 
   const handleDelete = (id) => {
+    setSearchInput("Item deleted");
     setData(data.filter((item) => item.id !== id));
+  };
+
+  const handleInputChange = (e) => {
+    setSearchInput(e.target.value);
+  };
+
+  const basketCard = [
+    {
+      flagImg: FlagImgItaly,
+      soldText: "Распродано",
+      img: ImgBicycle,
+      text: "Bianchi AQUILA L DURA ACE DI2 TEAM JUMBO 2021",
+      cost: "684 840 ₽",
+    },
+    {
+      flagImg: FlagImgItaly,
+      soldText: "Распродано",
+      img: ImgBicycle,
+      text: "Bianchi AQUILA L DURA ACE DI2 TEAM JUMBO 2021",
+      cost: "684 840 ₽",
+    },
+    {
+      flagImg: FlagImgItaly,
+      soldText: "Распродано",
+      img: ImgBicycle,
+      text: "Bianchi AQUILA L DURA ACE DI2 TEAM JUMBO 2021",
+      cost: "684 840 ₽",
+    },
+  ];
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setData([...data, formData]);
+    setFormData({
+      id: Math.floor(Math.random() * 100),
+      img: "",
+      text: "",
+      count: 0,
+      cost: 0,
+    });
+  };
+
+  const onchangeValue = (e) => {
+    const { name, value } = e.target;
+    console.log(parseFloat(value), name);
+    if (name == "count" || name == "cost") {
+      setFormData({ ...formData, [name]: parseFloat(value) });
+    } else {
+      setFormData({ ...formData, [name]: value });
+    }
   };
 
   return (
     <>
       <Header />
       <Container>
+        <form>
+          <input
+            value={formData.img}
+            name="img"
+            type="url"
+            placeholder="ImgUrl"
+            onChange={onchangeValue}
+          />
+          <input
+            value={formData.text}
+            name="text"
+            type="text"
+            placeholder="about"
+            onChange={onchangeValue}
+          />
+          <input
+            value={formData.count}
+            name="count"
+            type="number"
+            placeholder="amount"
+            onChange={onchangeValue}
+          />
+          <input
+            value={formData.cost}
+            name="cost"
+            type="number"
+            placeholder="price"
+            onChange={onchangeValue}
+          />
+          <button onClick={handleSubmit}>Submit</button>
+        </form>
         <BasketStyle>
           <div className="basket__link-wrapper">
             <p className="basket__link">Главная </p>
@@ -67,17 +133,56 @@ const Basket = () => {
             <p className="basket__link">Корзина</p>
           </div>
           <h1 className="basket__title">Корзина</h1>
-          {data.map((item) => (
-            <BasketCard
-              key={item.cost}
-              {...item}
-              handleDecrement={handleDecrement}
-              handleIncrement={handleIncrement}
-              handleDelete={handleDelete}
-            />
-          ))}
+
+          <div className="basket__card-wrapper">
+            <div className="basket__card-intro">
+              <div className="basket__card-filter">
+                <p>Вернуться к покупкам</p>
+                <p>Очистить корзину</p>
+              </div>
+              {data?.map((item) => {
+                return (
+                  <BasketCard
+                    key={item.id}
+                    {...item}
+                    handleDecrement={handleDecrement}
+                    handleIncrement={handleIncrement}
+                    handleDelete={handleDelete}
+                  />
+                );
+              })}
+            </div>
+            <div className="basket__design">
+              <div className="basket__order-number-wrapper">
+                <p className="basket__order-text">Номер заказа</p>
+                <p className="basket__order-number">789563678</p>
+              </div>
+              <div className="basket__order-cost-wrapper">
+                <p className="basket__order-text">Сумма заказа (без скидки)</p>
+                <p className="basket__order-cost">692 370 ₽ </p>
+              </div>
+              <p className="basket__discount">
+                Скидка <span>87 000 ₽ </span>
+              </p>
+              <p className="basket__order-total">
+                Итого <span>605 370 ₽ </span>
+              </p>
+              <Button fullWidth variant={"orange"}>
+                Оформить заказ
+              </Button>
+            </div>
+          </div>
+          <div className="similar__products-wrapper">
+            <h2 className="similar__products-title">Похожие товары</h2>
+            <div className="similar__card-wrapper">
+              {basketCard.map((item) => (
+                <Card {...item} />
+              ))}
+            </div>
+          </div>
         </BasketStyle>
       </Container>
+      <Footer />
     </>
   );
 };

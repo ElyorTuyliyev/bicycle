@@ -6,6 +6,11 @@ const CardStyle = styled.div`
   border-radius: 10px;
   padding: 0 16px;
   position: relative;
+  transition: 0.3s;
+
+  &:hover {
+    box-shadow: 0 0 10px 0 ${Colors.dark[300]};
+  }
 
   .card__flag-wrapper {
     display: flex;

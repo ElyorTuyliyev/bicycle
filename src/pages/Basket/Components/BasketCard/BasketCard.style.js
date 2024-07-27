@@ -31,6 +31,17 @@ const BasketCardStyle = styled.div`
       font-size: 16px;
     }
   }
+
+  .icon-pen {
+    font-size: 25px;
+    color: ${Colors.dark[400]};
+    padding: 2px;
+    border-radius: 5px;
+    cursor: pointer;
+    &:hover {
+      border: 1px solid ${Colors.dark[300]};
+    }
+  }
 `;
 
 export default BasketCardStyle;

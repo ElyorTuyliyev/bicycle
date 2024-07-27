@@ -10,6 +10,7 @@ import Card from "../../components/Card";
 import FlagImgItaly from "../../assets/images/flag-italy.png";
 import ImgBicycle from "../../assets/images/bicycle-1.png";
 import Footer from "../../components/footer";
+
 const Basket = () => {
   const [data, setData] = useState([]);
 
@@ -66,14 +67,13 @@ const Basket = () => {
       id: Math.floor(Math.random() * 100),
       img: "",
       text: "",
-      count: 0,
-      cost: 0,
+      count: Number,
+      cost: Number,
     });
   };
 
   const onchangeValue = (e) => {
     const { name, value } = e.target;
-    console.log(parseFloat(value), name);
     if (name == "count" || name == "cost") {
       setFormData({ ...formData, [name]: parseFloat(value) });
     } else {
@@ -81,9 +81,16 @@ const Basket = () => {
     }
   };
 
-  const handleAllCardDelete = (id) => {
-    setData(data.filter((item) => item !== item));
+  const handleAllCardDelete = () => {
+    setData([]);
   };
+
+  const totalAmount = data.reduce((acc, item) => {
+    console.log(acc, item, "reduce");
+    return acc + item.count * item.cost;
+  }, 0);
+
+  const discount = totalAmount / 10;
 
   return (
     <>
@@ -151,17 +158,22 @@ const Basket = () => {
             <div className="basket__design">
               <div className="basket__order-number-wrapper">
                 <p className="basket__order-text">Номер заказа</p>
-                <p className="basket__order-number">789563678</p>
+                <p className="basket__order-number">8378287</p>
               </div>
               <div className="basket__order-cost-wrapper">
                 <p className="basket__order-text">Сумма заказа (без скидки)</p>
-                <p className="basket__order-cost">692 370 ₽ </p>
+                <p className="basket__order-cost">
+                  {totalAmount.toLocaleString("Fi-fi")} ₽
+                </p>
               </div>
               <p className="basket__discount">
-                Скидка <span>87 000 ₽ </span>
+                Скидка <span> {discount} ₽ </span>
               </p>
               <p className="basket__order-total">
-                Итого <span>605 370 ₽ </span>
+                Итого{" "}
+                <span>
+                  {(totalAmount - discount).toLocaleString("Fi-fi")} ₽
+                </span>
               </p>
               <Button fullWidth variant={"orange"}>
                 Оформить заказ

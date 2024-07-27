@@ -1,6 +1,6 @@
-import Container from "../../../../container";
 import BasketCardStyle from "./BasketCard.style";
 import CrossIcon from "../../../../assets/icons/Icon-cross.svg";
+import { HiOutlinePencil } from "react-icons/hi";
 function BasketCard({
   img,
   text,
@@ -10,6 +10,7 @@ function BasketCard({
   handleIncrement,
   handleDelete,
   id,
+  handleEditCard,
 }) {
   const totalAmount = count ? cost * count : cost;
 
@@ -43,6 +44,10 @@ function BasketCard({
       <p className="basketCard__count">
         {totalAmount.toLocaleString("Fi-fi")} ₽
       </p>
+      <HiOutlinePencil
+        onClick={() => handleEditCard(id)}
+        className="icon-pen"
+      />
       <img
         className="basketCard__cross-icon"
         src={CrossIcon}

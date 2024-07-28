@@ -67,8 +67,8 @@ const Basket = () => {
       id: Math.floor(Math.random() * 100),
       img: "",
       text: "",
-      count: Number,
-      cost: Number,
+      count: 0,
+      cost: 0,
     });
   };
 
@@ -86,12 +86,16 @@ const Basket = () => {
   };
 
   const totalAmount = data.reduce((acc, item) => {
-    console.log(acc, item, "reduce");
     return acc + item.count * item.cost;
   }, 0);
 
-  const discount = totalAmount / 10;
+  const discount = totalAmount / 100;
 
+  const [edit, setEdit] = useState();
+
+  const handleEditCard = () => {
+    console.log(data);
+  };
   return (
     <>
       <Header />
@@ -151,6 +155,7 @@ const Basket = () => {
                     handleDecrement={handleDecrement}
                     handleIncrement={handleIncrement}
                     handleDelete={handleDelete}
+                    handleEditCard={handleEditCard}
                   />
                 );
               })}
@@ -167,7 +172,7 @@ const Basket = () => {
                 </p>
               </div>
               <p className="basket__discount">
-                Скидка <span> {discount} ₽ </span>
+                Скидка <span> {discount.toLocaleString("Fi-fi")} ₽ </span>
               </p>
               <p className="basket__order-total">
                 Итого{" "}

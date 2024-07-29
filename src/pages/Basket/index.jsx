@@ -13,9 +13,8 @@ import Footer from "../../components/footer";
 
 const Basket = () => {
   const [data, setData] = useState([]);
-
+  const [edit, setEdit] = useState();
   const [formData, setFormData] = useState({});
-
   const handleDecrement = (id) => {
     setData(
       data.map((item) =>
@@ -23,7 +22,6 @@ const Basket = () => {
       )
     );
   };
-
   const handleIncrement = (id) => {
     setData(
       data.map((item) =>
@@ -31,7 +29,6 @@ const Basket = () => {
       )
     );
   };
-
   const handleDelete = (id) => {
     setData(data.filter((item) => item.id !== id));
   };
@@ -62,9 +59,9 @@ const Basket = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setData([...data, formData]);
+    setData([...data, { ...formData, id: Math.floor(Math.random() * 100) }]);
     setFormData({
-      id: Math.floor(Math.random() * 100),
+      id: "",
       img: "",
       text: "",
       count: 0,
@@ -91,11 +88,16 @@ const Basket = () => {
 
   const discount = totalAmount / 100;
 
-  const [edit, setEdit] = useState();
-
-  const handleEditCard = () => {
-    console.log(data);
+  const handleEditCard = (id) => {
+    setEdit();
+    console.log(id);
+    console.log(
+      data.find((id) => {
+        setEdit(id);
+      })
+    );
   };
+
   return (
     <>
       <Header />

@@ -3,7 +3,7 @@ import BasketStyle from "./Basket.style";
 import BasketCard from "./Components/BasketCard";
 import BasketImg from "../../assets/images/basket-bicycle.png";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Container from "../../container";
 import Button from "../../components/Button";
 import Card from "../../components/Card";
@@ -59,7 +59,16 @@ const Basket = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setData([...data, { ...formData, id: Math.floor(Math.random() * 100) }]);
+    if (Object.values(edit).length) {
+      setData(
+        data.map((item) =>
+          item.id === edit.id ? { ...item, ...formData } : item
+        )
+      );
+    } else {
+      setData([...data, { ...formData, id: Math.floor(Math.random() * 100) }]);
+    }
+
     setFormData({
       id: "",
       img: "",
@@ -71,7 +80,7 @@ const Basket = () => {
 
   const onchangeValue = (e) => {
     const { name, value } = e.target;
-    if (name == "count" || name == "cost") {
+    if (name === "count" || name === "cost") {
       setFormData({ ...formData, [name]: parseFloat(value) });
     } else {
       setFormData({ ...formData, [name]: value });
@@ -89,13 +98,9 @@ const Basket = () => {
   const discount = totalAmount / 100;
 
   const handleEditCard = (id) => {
-    setEdit();
-    console.log(id);
-    console.log(
-      data.find((id) => {
-        setEdit(id);
-      })
-    );
+    const item = data.find((item) => item.id === id);
+    setFormData(item);
+    setEdit(item);
   };
 
   return (

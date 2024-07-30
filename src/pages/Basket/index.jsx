@@ -10,11 +10,15 @@ import Card from "../../components/Card";
 import FlagImgItaly from "../../assets/images/flag-italy.png";
 import ImgBicycle from "../../assets/images/bicycle-1.png";
 import Footer from "../../components/footer";
+import { useNavigate } from "react-router-dom";
 
 const Basket = () => {
   const [data, setData] = useState([]);
   const [edit, setEdit] = useState();
   const [formData, setFormData] = useState({});
+
+  const navigate = useNavigate();
+
   const handleDecrement = (id) => {
     setData(
       data.map((item) =>
@@ -103,6 +107,10 @@ const Basket = () => {
     setEdit(item);
   };
 
+  const handleNavigate = () => {
+    navigate("/home");
+  };
+
   return (
     <>
       <Header />
@@ -182,12 +190,12 @@ const Basket = () => {
                 Скидка <span> {discount.toLocaleString("Fi-fi")} ₽ </span>
               </p>
               <p className="basket__order-total">
-                Итого{" "}
+                Итого
                 <span>
                   {(totalAmount - discount).toLocaleString("Fi-fi")} ₽
                 </span>
               </p>
-              <Button fullWidth variant={"orange"}>
+              <Button fullWidth variant={"orange"} onClick={handleNavigate}>
                 Оформить заказ
               </Button>
             </div>

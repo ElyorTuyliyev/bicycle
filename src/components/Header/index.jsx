@@ -8,14 +8,17 @@ import HeartIcon from "../../assets/icons/heart.svg";
 import MenuBarIcon from "../../assets/icons/menu-bar.svg";
 import ShopIcon from "../../assets/icons/shop.svg";
 import UserIcon from "../../assets/icons/user1.svg";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const link = [
     {
       title: "Trade In",
+      path: "/tradein",
     },
     {
       title: "Велосипеды",
+      path: "/bicycles",
     },
     {
       title: "Запчасти",
@@ -35,7 +38,9 @@ const Header = () => {
       <header className="header">
         <Container>
           <div className="header__wrapper">
-            <img src={LogoIcon} alt="logo" />
+            <Link to={"/home"}>
+              <img src={LogoIcon} alt="logo" />
+            </Link>
             <div className="header__link-wrapper">
               <div className="header__links">
                 {link.map((item) => (
@@ -45,8 +50,13 @@ const Header = () => {
               <div className="header__link-icon">
                 <img src={SearchIcon} alt="search-icon" />
                 <img src={UserIcon} alt="user-icon" />
-                <img src={HeartIcon} alt="heart-icon" />
-                <img src={ShopIcon} alt="shop-icon" />
+                <Link to={"/productAdd"}>
+                  <img src={HeartIcon} alt="heart-icon" />
+                </Link>
+
+                <Link to="/basket">
+                  <img src={ShopIcon} alt="shop-icon" />
+                </Link>
               </div>
               <img src={MenuBarIcon} alt="menu-icon" />
             </div>

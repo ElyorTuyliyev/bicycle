@@ -104,39 +104,41 @@ function ProductAdd() {
   return (
     <>
       <Header />
-      <ProductAddStyle>
-        <form>
-          <input
-            value={formData.img}
-            name="img"
-            type="url"
-            placeholder="ImgUrl"
-            onChange={onchangeValue}
-          />
-          <input
-            value={formData.text}
-            name="text"
-            type="text"
-            placeholder="about"
-            onChange={onchangeValue}
-          />
-          <input
-            value={formData.count}
-            name="count"
-            type="number"
-            placeholder="amount"
-            onChange={onchangeValue}
-          />
-          <input
-            value={formData.cost}
-            name="cost"
-            type="number"
-            placeholder="price"
-            onChange={onchangeValue}
-          />
-          <button onClick={handleSubmit}>Submit</button>
-        </form>
-      </ProductAddStyle>
+      <Container>
+        <ProductAddStyle>
+          <form>
+            <input
+              value={formData.img}
+              name="img"
+              type="url"
+              placeholder="ImgUrl"
+              onChange={onchangeValue}
+            />
+            <input
+              value={formData.text}
+              name="text"
+              type="text"
+              placeholder="about"
+              onChange={onchangeValue}
+            />
+            <input
+              value={formData.count}
+              name="count"
+              type="number"
+              placeholder="amount"
+              onChange={onchangeValue}
+            />
+            <input
+              value={formData.cost}
+              name="cost"
+              type="number"
+              placeholder="price"
+              onChange={onchangeValue}
+            />
+            <button onClick={handleSubmit}>Submit</button>
+          </form>
+        </ProductAddStyle>
+      </Container>
     </>
   );
 }

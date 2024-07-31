@@ -11,10 +11,11 @@ import FlagImgItaly from "../../assets/images/flag-italy.png";
 import ImgBicycle from "../../assets/images/bicycle-1.png";
 import Footer from "../../components/footer";
 import { useNavigate } from "react-router-dom";
+import ROUTES_PATHS from "../../routes/paths";
 
 const Basket = () => {
   const [data, setData] = useState([]);
-  const [edit, setEdit] = useState();
+  const [edit, setEdit] = useState([]);
   const [formData, setFormData] = useState({});
 
   const navigate = useNavigate();
@@ -63,23 +64,27 @@ const Basket = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (Object.values(edit).length) {
+    if (Object?.values(edit)?.length) {
       setData(
-        data.map((item) =>
-          item.id === edit.id ? { ...item, ...formData } : item
+        data?.map((item) =>
+          item?.id === edit?.id ? { ...item, ...formData } : item
         )
       );
     } else {
-      setData([...data, { ...formData, id: Math.floor(Math.random() * 100) }]);
+      setData(
+        [...data, { ...formData, id: Math.floor(Math.random() * 100) }] || []
+      );
     }
 
-    setFormData({
-      id: "",
-      img: "",
-      text: "",
-      count: 0,
-      cost: 0,
-    });
+    setFormData(
+      {
+        id: "",
+        img: "",
+        text: "",
+        count: 0,
+        cost: 0,
+      } || {}
+    );
   };
 
   const onchangeValue = (e) => {
@@ -95,8 +100,8 @@ const Basket = () => {
     setData([]);
   };
 
-  const totalAmount = data.reduce((acc, item) => {
-    return acc + item.count * item.cost;
+  const totalAmount = data?.reduce((acc, item) => {
+    return acc + item?.count * item?.cost || 0;
   }, 0);
 
   const discount = totalAmount / 100;
@@ -108,7 +113,9 @@ const Basket = () => {
   };
 
   const handleNavigate = () => {
-    navigate("/home");
+    navigate(ROUTES_PATHS.ABOUT + `?productId=${data[0]?.id}`, {
+      state: { totalAmount, discount },
+    });
   };
 
   return (
@@ -183,16 +190,16 @@ const Basket = () => {
               <div className="basket__order-cost-wrapper">
                 <p className="basket__order-text">Сумма заказа (без скидки)</p>
                 <p className="basket__order-cost">
-                  {totalAmount.toLocaleString("Fi-fi")} ₽
+                  {totalAmount?.toLocaleString("Fi-fi")} ₽
                 </p>
               </div>
               <p className="basket__discount">
-                Скидка <span> {discount.toLocaleString("Fi-fi")} ₽ </span>
+                Скидка <span> {discount?.toLocaleString("Fi-fi")} ₽ </span>
               </p>
               <p className="basket__order-total">
                 Итого
                 <span>
-                  {(totalAmount - discount).toLocaleString("Fi-fi")} ₽
+                  {(totalAmount - discount)?.toLocaleString("Fi-fi")} ₽
                 </span>
               </p>
               <Button fullWidth variant={"orange"} onClick={handleNavigate}>

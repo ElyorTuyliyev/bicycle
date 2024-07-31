@@ -42,7 +42,7 @@ function BasketCard({
         </button>
       </div>
       <p className="basketCard__count">
-        {totalAmount.toLocaleString("Fi-fi")} ₽
+        {totalAmount?.toLocaleString("Fi-fi")} ₽
       </p>
       <HiOutlinePencil
         onClick={() => handleEditCard(id)}

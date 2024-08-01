@@ -32,6 +32,9 @@ import IconPhone from "../../assets/icons/icon-phone.svg";
 import IconGear from "../../assets/icons/icon-gear.svg";
 import IconChain from "../../assets/icons/icon-chain.svg";
 import CardMountain from "./components/MontainCard";
+import { useLocation } from "react-router-dom";
+import { useState } from "react";
+import Colors from "../../themes/colors";
 function Home() {
   const cards = [
     {
@@ -149,6 +152,14 @@ function Home() {
     //   text: "Contrary to popular belief, lorem ipsum is not simply random text. It has roots in",
     // },
   ];
+  const [location, setLocation] = useState([]);
+
+  const handleBtn = () => {
+    setLocation({
+      name: "Alicode",
+      age: 1000,
+    });
+  };
 
   return (
     <>
@@ -164,7 +175,9 @@ function Home() {
                   педалированию электроприводом, который устанавливает новый,
                   очень высокий стандарт для данной категории
                 </p>
-                <Button variant={"orange"}>Подробнее</Button>
+                <Button variant={"orange"} onClick={handleBtn}>
+                  {location.name}
+                </Button>
 
                 <div className="home__pagination-wrapper">
                   <div className="home__pagination"></div>

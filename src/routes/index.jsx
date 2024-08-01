@@ -1,12 +1,12 @@
 import React from "react";
-import withLoader, { withAuth } from "../hocs/withLoader";
+import withLoader from "../hocs/withLoader";
 import About from "../pages/About";
 import Basket from "../pages/Basket";
 import Home from "../pages/Home";
 import ProductAdd from "../pages/Product add";
 import ROUTES_PATHS from "./paths";
 
-const HomeWithLoader = withAuth(Home);
+const HomeWithLoader = withLoader(Home);
 
 const ROUTES = [
   {

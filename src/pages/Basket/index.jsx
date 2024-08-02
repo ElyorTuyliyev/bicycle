@@ -3,7 +3,7 @@ import BasketStyle from "./Basket.style";
 import BasketCard from "./Components/BasketCard";
 import BasketImg from "../../assets/images/basket-bicycle.png";
 
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Container from "../../container";
 import Button from "../../components/Button";
 import Card from "../../components/Card";
@@ -12,11 +12,15 @@ import ImgBicycle from "../../assets/images/bicycle-1.png";
 import Footer from "../../components/footer";
 import { useNavigate } from "react-router-dom";
 import ROUTES_PATHS from "../../routes/paths";
+import ProductAdd, { ProductAddContext } from "../Product add";
 
 const Basket = () => {
   const [data, setData] = useState([]);
   const [edit, setEdit] = useState([]);
   const [formData, setFormData] = useState({});
+  const productAddValue = useContext(ProductAddContext);
+
+  console.log(productAddValue);
 
   const navigate = useNavigate();
 
@@ -122,7 +126,7 @@ const Basket = () => {
     <>
       <Header />
       <Container>
-        <form>
+        {/* <form>
           <input
             value={formData.img}
             name="img"
@@ -152,7 +156,8 @@ const Basket = () => {
             onChange={onchangeValue}
           />
           <button onClick={handleSubmit}>Submit</button>
-        </form>
+        </form> */}
+        <ProductAdd />
         <BasketStyle>
           <div className="basket__link-wrapper">
             <p className="basket__link">Главная </p>

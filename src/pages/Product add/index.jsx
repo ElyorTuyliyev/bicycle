@@ -1,35 +1,16 @@
 import Header from "../../components/Header";
 import ProductAddStyle from "./ProductAdd.style";
-import BasketImg from "../../assets/images/basket-bicycle.png";
-import { useState } from "react";
+import { createContext, useState } from "react";
 import Container from "../../container";
-import Button from "../../components/Button";
-import Card from "../../components/Card";
 import FlagImgItaly from "../../assets/images/flag-italy.png";
 import ImgBicycle from "../../assets/images/bicycle-1.png";
-import Footer from "../../components/footer";
+
+export const ProductAddContext = createContext();
 
 function ProductAdd() {
   const [data, setData] = useState([]);
-  const [edit, setEdit] = useState();
+  const [edit, setEdit] = useState([]);
   const [formData, setFormData] = useState({});
-  const handleDecrement = (id) => {
-    setData(
-      data.map((item) =>
-        item.id === id ? { ...item, count: item.count - 1 } : item
-      )
-    );
-  };
-  const handleIncrement = (id) => {
-    setData(
-      data.map((item) =>
-        item.id === id ? { ...item, count: item.count + 1 } : item
-      )
-    );
-  };
-  const handleDelete = (id) => {
-    setData(data.filter((item) => item.id !== id));
-  };
 
   const basketCard = [
     {
@@ -85,24 +66,8 @@ function ProductAdd() {
     }
   };
 
-  const handleAllCardDelete = () => {
-    setData([]);
-  };
-
-  const totalAmount = data.reduce((acc, item) => {
-    return acc + item.count * item.cost;
-  }, 0);
-
-  const discount = totalAmount / 100;
-
-  const handleEditCard = (id) => {
-    const item = data.find((item) => item.id === id);
-    setFormData(item);
-    setEdit(item);
-  };
-
   return (
-    <>
+    <ProductAddContext.Provider value="hhheheh">
       <Header />
       <Container>
         <ProductAddStyle>
@@ -139,7 +104,7 @@ function ProductAdd() {
           </form>
         </ProductAddStyle>
       </Container>
-    </>
+    </ProductAddContext.Provider>
   );
 }
 

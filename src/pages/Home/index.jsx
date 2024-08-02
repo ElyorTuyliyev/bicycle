@@ -156,7 +156,7 @@ function Home() {
 
   const handleBtn = () => {
     setLocation({
-      name: "Alicode",
+      name: "error",
       age: 1000,
     });
   };

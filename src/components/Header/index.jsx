@@ -38,7 +38,7 @@ const Header = () => {
       <header className="header">
         <Container>
           <div className="header__wrapper">
-            <Link to={"/home"}>
+            <Link to={"/"}>
               <img src={LogoIcon} alt="logo" />
             </Link>
             <div className="header__link-wrapper">

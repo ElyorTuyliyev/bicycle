@@ -126,7 +126,7 @@ const Basket = () => {
     <>
       <Header />
       <Container>
-        {/* <form>
+        <form>
           <input
             value={formData.img}
             name="img"
@@ -156,8 +156,8 @@ const Basket = () => {
             onChange={onchangeValue}
           />
           <button onClick={handleSubmit}>Submit</button>
-        </form> */}
-        <ProductAdd />
+        </form>
+
         <BasketStyle>
           <div className="basket__link-wrapper">
             <p className="basket__link">Главная </p>

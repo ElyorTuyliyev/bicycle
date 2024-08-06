@@ -1,9 +1,9 @@
 const ROUTES_PATHS = {
-  HOME: "/",
+  HOME: "/home",
   BASKET: "/basket",
   PRODUCT_ADD: "/product-add",
   ABOUT: "/about",
-  PRODUCT_INFO: "/products/dskaodk",
+  PRODUCT_INFO: "/products",
   PRODUCTS: "/products",
   PRODUCT_INFO: "/products/:id",
 };

@@ -177,7 +177,9 @@ function Home() {
                   <div className="home__pagination">
                     <p></p>
                   </div>
-                  <div className="home__pagination"></div>
+                  <div className="home__pagination">
+                    <p></p>
+                  </div>
                 </div>
               </div>
             </section>

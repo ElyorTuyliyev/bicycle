@@ -9,7 +9,7 @@ const HomeStyle = styled.div`
   height: 100vh;
   background-size: cover;
   position: absolute;
-  top: 0;
+  top: 0px;
   z-index: -99;
 
   .home {

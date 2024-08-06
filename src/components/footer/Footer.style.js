@@ -60,9 +60,10 @@ const FooterStyle = styled.div`
   }
 
   .footer__wrapper {
-    padding: 91px 0 0 0;
+    padding: 91px 0 40px 0;
     display: flex;
     justify-content: space-between;
+    border-bottom: 1px solid ${Colors.dark[700]};
   }
 
   .footer__list-wrapper {
@@ -76,6 +77,37 @@ const FooterStyle = styled.div`
     color: ${Colors.dark[300]};
     width: 289px;
     line-height: 25.6px;
+  }
+
+  .footer__link-title {
+    color: ${Colors.white[900]};
+    font-size: 24px;
+    padding: 0 0 32px 0;
+  }
+
+  .footer__list-link {
+    color: ${Colors.white[900]};
+    line-height: 40.6px;
+    font-weight: 300;
+    cursor: pointer;
+    &:hover {
+      color: ${Colors.orange[600]};
+    }
+  }
+
+  .footer__contact-number-wrapper {
+    display: flex;
+    gap: 16px;
+    padding-bottom: 16px;
+    color: ${Colors.white[900]};
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 25px;
+  }
+
+  .footer__world-bike {
+    padding: 10px;
+    color: ${Colors.dark[500]};
   }
 `;
 export default FooterStyle;

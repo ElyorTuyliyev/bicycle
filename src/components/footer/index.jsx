@@ -3,6 +3,9 @@ import Container from "../../container/index";
 import FooterBc from "../../assets/images/footer-bc-img.png";
 import Button from "../Button";
 import FooterLogo from "../../assets/icons/logo.svg";
+import phoneIcon from "../../assets/icons/smartphone.svg";
+import navigationIcon from "../../assets/icons/navigation.svg";
+import mailIcon from "../../assets/icons/mail.svg";
 
 const Footer = ({ withForm }) => {
   const catalog = [
@@ -20,6 +23,29 @@ const Footer = ({ withForm }) => {
     },
     {
       name: "Аксессуары",
+    },
+  ];
+  const client = [
+    {
+      name: "О нас",
+    },
+    {
+      name: "Доставка и оплата",
+    },
+    {
+      name: "Блог",
+    },
+    {
+      name: "Контакты",
+    },
+    {
+      name: "Веломастерская",
+    },
+    {
+      name: "Хранение",
+    },
+    {
+      name: "Гарантии",
     },
   ];
   console.log(catalog[0].name);
@@ -62,30 +88,54 @@ const Footer = ({ withForm }) => {
                 </p>
               </div>
               <ul className="footer__catalog-wrapper">
-                <h2>Каталог</h2>
+                <h2 className="footer__link-title">Каталог</h2>
                 {catalog.map((item) => (
                   <>
-                    <li key={item}>{item.name}</li>
+                    <li className="footer__list-link" key={item}>
+                      {item.name}
+                    </li>
                   </>
                 ))}
               </ul>
               <ul className="footer__client-wrapper">
-                <h2>Каталог</h2>
-                {catalog.map((item) => (
+                <h2 className="footer__link-title">Для клиента</h2>
+                {client.map((item) => (
                   <>
-                    <li key={item}>{item.name}</li>
+                    <li className="footer__list-link" key={item}>
+                      {item.name}
+                    </li>
                   </>
                 ))}
               </ul>
               <ul className="footer__contact-wrapper">
-                <h2>Каталог</h2>
-                {catalog.map((item) => (
-                  <>
-                    <li key={item}>{item.name}</li>
-                  </>
-                ))}
+                <h2 className="footer__link-title">Контакты</h2>
+                <div className="footer__contact-number-wrapper">
+                  <img src={phoneIcon} alt="phone-icon" />
+                  <div className="footer__phone-wrapper">
+                    <p className="footer-phone">+7(495)055-75-86</p>
+                    <p className="footer-phone">+7(965)142-22-99</p>
+                  </div>
+                </div>
+                <div className="footer__contact-number-wrapper">
+                  <img src={navigationIcon} alt="phone-icon" />
+                  <div className="footer__phone-wrapper">
+                    <p className="footer-phone">г. Москва, ул. </p>
+                    <p className="footer-phone">Доватора, 7/8 с1</p>
+                  </div>
+                </div>
+                <div className="footer__contact-number-wrapper">
+                  <img src={mailIcon} alt="phone-icon" />
+                  <div className="footer__phone-wrapper">
+                    <p className="footer-phone">
+                      <p className="footer-phone">order@world-bike.ru</p>
+                    </p>
+                  </div>
+                </div>
               </ul>
             </div>
+            <p className="footer__world-bike">
+              © 2023 world bike <span>Пользовательское соглашение</span>
+            </p>
           </Container>
         </section>
       </footer>

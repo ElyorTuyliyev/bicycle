@@ -35,6 +35,7 @@ import CardMountain from "./components/MontainCard";
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
 import Colors from "../../themes/colors";
+import Footer from "../../components/footer";
 function Home() {
   const cards = [
     {
@@ -152,17 +153,9 @@ function Home() {
     //   text: "Contrary to popular belief, lorem ipsum is not simply random text. It has roots in",
     // },
   ];
-  const [location, setLocation] = useState([]);
-
-  const handleBtn = () => {
-    setLocation({
-      name: "error",
-      age: 1000,
-    });
-  };
 
   return (
-    <>
+    <div className="home__wrapper">
       <Header />
       <main className="main">
         <HomeStyle>
@@ -175,9 +168,7 @@ function Home() {
                   педалированию электроприводом, который устанавливает новый,
                   очень высокий стандарт для данной категории
                 </p>
-                <Button variant={"orange"} onClick={handleBtn}>
-                  {location.name}
-                </Button>
+                <Button variant={"orange"}>Подробнее</Button>
 
                 <div className="home__pagination-wrapper">
                   <div className="home__pagination"></div>
@@ -281,7 +272,6 @@ function Home() {
               </div>
             </Container>
           </section>
-
           <section className="about">
             <img className="img" src={AboutNaturel} alt="about-bicycle" />
             <Container>
@@ -303,7 +293,6 @@ function Home() {
               </div>
             </div>
           </section>
-
           <section className="mountain">
             <Container>
               <h2 className="mountain__title">Горные велосипеды</h2>
@@ -328,9 +317,10 @@ function Home() {
               </div>
             </Container>
           </section>
+          <Footer />
         </HomeStyle>
       </main>
-    </>
+    </div>
   );
 }
 

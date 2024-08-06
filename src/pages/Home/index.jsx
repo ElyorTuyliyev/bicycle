@@ -171,15 +171,9 @@ function Home() {
                 <Button variant={"orange"}>Подробнее</Button>
 
                 <div className="home__pagination-wrapper">
-                  <div className="home__pagination">
-                    <p></p>
-                  </div>
-                  <div className="home__pagination">
-                    <p></p>
-                  </div>
-                  <div className="home__pagination">
-                    <p></p>
-                  </div>
+                  <div className="home__pagination"></div>
+                  <div className="home__pagination"></div>
+                  <div className="home__pagination"></div>
                 </div>
               </div>
             </section>

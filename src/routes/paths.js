@@ -9,5 +9,3 @@ const ROUTES_PATHS = {
 };
 
 export default ROUTES_PATHS;
-
-

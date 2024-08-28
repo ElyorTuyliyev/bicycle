@@ -1,5 +1,5 @@
 const ROUTES_PATHS = {
-  HOME: "/home",
+  HOME: "/",
   BASKET: "/basket",
   PRODUCT_ADD: "/product-add",
   ABOUT: "/about",
